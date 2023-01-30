@@ -5,7 +5,7 @@ function MediumCards({img, title}) {
   return (
     <div className='cursor-pointer hover:scale-105 transition transform-400 ease-out'>
      <div className='relative h-80 w-80'>
-        <Image className='rounded-xl'
+        <Image className='rounded-xl' alt=''
         src={img}
         layout='fill'
         />
