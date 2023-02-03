@@ -32,7 +32,7 @@ function Header() {
     <header className='sticky top-0 z-50 grid grid-cols-3 bg-white shadow-md p-5 md:px-10'>
         
         {/* left */}
-        <div className='relative h-7 w-8/12 sm:h-7 sm:w-7/12 md:h-8 md:w-6/12 lg:h-9 lg:w-5/12 xl:h-10 xl:w-5/12 flex items-center cursor-pointer my-auto'>
+        <div className='relative h-7 w-8/12 sm:h-7 sm:w-7/12 md:h-8 md:w-6/12 lg:h-9 lg:w-5/12 xl:h-9 xl:w-4/12 flex items-center cursor-pointer my-auto'>
             <Image 
                 src="https://links.papareact.com/qd3" alt=''
                 layout="fill"
