@@ -14,34 +14,36 @@ import { useRouter } from 'next/router';
 
 function Header() {
   const [searchInput, setSearchInput]=useState('')
-  const [startDate, setStartDate]=useState(new Date());
-  const [endDate, setEndDate]=useState(new Date());
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
   const [noOfGuests, setNoOfGuests]=useState(1)
   const router = useRouter()
-
-  const selectionRange = {
-    startDate: startDate,
-    endDate: endDate,
-    key:'selection'
-  }
-
-  
-  const resetInput = () => {
-    setSearchInput('')
-  }
 
   const handleSelect = (ranges) => {
     setStartDate(ranges.selection.startDate)
     setEndDate(ranges.selection.endDate)
   }
 
+  const selectionRange = {
+    startDate: startDate,
+    endDate: endDate,
+    key:'selection',
+  }
+
+ 
+  const resetInput = () => {
+    setSearchInput('')
+  }
+
+ 
+
   const search =()=>{
     router.push({
       pathname:'/search',
       query:{
         location: searchInput,
-        startDate: startDate.toISOString,
-        endDate: endDate.toISOString,
+        startDate: startDate.toISOString(),
+        endDate: endDate.toISOString(),
         noOfGuests,
       }
     })
