@@ -12,7 +12,7 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRangePicker } from 'react-date-range';
 import { useRouter } from 'next/router';
 
-function Header() {
+function Header({placeholder}) {
   const [searchInput, setSearchInput]=useState('')
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
@@ -54,7 +54,7 @@ function Header() {
     <header className='sticky top-0 z-50 grid grid-cols-3 bg-white shadow-md p-5 md:px-10'>
         
         {/* left */}
-        <div onClick={()=>router.push('/')} className='relative h-7 w-8/12 sm:h-7 sm:w-6/12 md:h-8 md:w-5/12 lg:h-9 lg:w-5/12 xl:h-9 xl:w-4/12 flex items-center cursor-pointer my-auto'>
+        <div onClick={()=>router.push('/')} className='relative h-7 w-7/12 sm:h-7 sm:w-6/12 md:h-8 md:w-5/12 lg:h-9 lg:w-4/12 xl:h-9 xl:w-3/12 flex items-center cursor-pointer my-auto'>
             <Image 
                 src="https://links.papareact.com/qd3" alt=''
                 layout="fill"
@@ -73,7 +73,7 @@ function Header() {
             className='flex-grow pl-5 bg-transparent
             outline-none text-sm text-gray-600 placeholder-gray-400'
             type='text'
-            placeholder='Start your Search'
+            placeholder={placeholder || 'Start your Search'}
             
             />
             <SearchIcon className=' hidden md:inline-flex h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer md:mx-2'
